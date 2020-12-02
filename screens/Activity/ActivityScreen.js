@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 
-class ActivityScreen extends Component {
-    render() {
-        return (
+function ActivityScreen({ navigation }) {
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            <Text style={{
+                marginTop: 50,
+                fontSize: 25
+            }}>
+                Activity Screen
+                </Text>
+
             <View style={{
                 flex: 1,
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
             }}>
-                <Text style={{
-                    marginTop: 50,
-                    fontSize: 25
-                }}>
-                    Activity Screen
-                </Text>
-
-                <View style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text>
-                            Activity Info
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Info')}>
+                    <Text>
+                        Activity Info
                         </Text>
-                    </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
             </View>
-        )
-    }
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

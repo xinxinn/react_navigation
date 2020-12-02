@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-class MapView extends Component {
-    render () {
-        return (
-            <View style={{
+function MapView({ navigation }) {
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            <Text style={{
                 flex: 1,
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
             }}>
-                <Text style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
-                    Map View
+                Map View
                 </Text>
 
-                <View>
-                    <TouchableOpacity style={styles.backBtn}>
-                        <Text>Back to Home</Text>
-                    </TouchableOpacity>
-                </View>
+            <View>
+                <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
+                    <Text>Back to Home</Text>
+                </TouchableOpacity>
             </View>
-        )
-    }
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

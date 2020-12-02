@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-class ActivityInfo extends Component {
-    render () {
-        return (
-            <View style={{
+function ActivityInfo({ navigation }) {
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            <Text style={{
                 flex: 1,
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
             }}>
-                <Text style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
-                    Activity Info
+                Activity Info
                 </Text>
-                
-                <View>
-                    <TouchableOpacity style={styles.backBtn}>
-                        <Text>
-                            Back to Activity
+
+            <View>
+                <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goback()}>
+                    <Text>
+                        Back to Activity
                         </Text>
-                    </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
             </View>
-        )
-    }
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({

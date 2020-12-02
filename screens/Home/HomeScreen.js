@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-class HomeScreen extends Component {
-    render() {
-        return (
+function HomeScreen({ navigation }) {
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            <Text style={{
+                marginTop: 50,
+                fontSize: 25
+            }}>
+                Home Screen
+                </Text>
+
             <View style={{
                 flex: 1,
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
             }}>
-                <Text style={{
-                    marginTop: 50,
-                    fontSize: 25
-                }}>
-                    Home Screen
-                </Text>
-
-                <View style={{
-                    flex: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text>
-                            Map
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Map')}>
+                    <Text>
+                        Map
                         </Text>
-                    </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
             </View>
-        )
-    }
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
